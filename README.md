@@ -12,6 +12,8 @@
     * k-NN_on_iris.py, 利用kNN对花的种类进行分类
 * linear regression
     * linear_regression_standard equation.py, 使用标准方程求解线性回归系数
+* decision tree
+    * decision_tree_ID3_ex.py, ID3决策树的简单实例，根据create_data_set中创建的dataSet数据集创建决策树
 
 ##主要参考资料：
 * 机器学习实战
