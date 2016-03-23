@@ -1,4 +1,4 @@
-#本脚本利用kNN算法对iris数据集进行分类，以前10%的数据作为测试数据，后90%的数据作为样本数据集
+﻿#本脚本利用kNN算法对iris数据集进行分类，以前10%的数据作为测试数据，后90%的数据作为样本数据集
 #由于iris数据集原本按照三种花的顺序排列，在测试时前10%全为第一种花，不能完整测试kNN的分类功能
 #故将后两种花随机挑选数据各5项放入前10%，需要文件irisdata_test.txt
 #后面的散点图将iris数据集的前三维数据画出，需要文件irisdata.txt
@@ -21,7 +21,7 @@ def file2matrix(fileName):
         listFromLine = line.split(',')
         dataSet[index, :] = listFromLine[0:4]
         labels.append(listFromLine[-1]) #取最后一维为标签
-        index += 1        
+        index += 1
     return dataSet, labels #数据集和标签分开
     
 def kNN(x, dataSet, labels, k):
@@ -64,7 +64,7 @@ def scatter():
     ax.set_ylabel('Y Label')
     ax.set_zlabel('Z Label')
     plt.show()
-    
+
 kNN_test()
 scatter()
 

@@ -1,21 +1,27 @@
 ﻿'''
 时间：2016/03/22
 作者：moverzp
-功能：ID3决策树的简单实例，根据create_data_set中创建的dataSet数据集创建决策树
+功能：建立ID3决策树，对lenses数据集进行分类，可以针对不同的患者推荐适应的隐形眼镜类型
+备注：欢迎访问我的博客(http://blog.csdn.net/xuelabizp)，其中有关于本脚本及其他机器学习算法的说明
 '''
 from numpy import *
 from math import log
 import operator
+import treePlotter
 
-def create_data_set():
-    dataSet =   [[1,1,'yes'],
-                [1,1,'yes'],
-                [1,0,'no'],
-                [0,1,'no'],
-                [0,1,'no']]
-    labels = ['no surfacing', 'flippers']
+#载入数据
+def file2matrix():
+    file = open("lenses.data.txt")
+    allLines = file.readlines()
+    row = len(allLines)
+    dataSet = []
+    for line in allLines:
+        line = line.strip()
+        listFromLine = line.split()
+        dataSet.append(listFromLine)
+    labels = ['age', 'prescription', 'astigmatic', 'tear rate'] #年龄，视力类型，是否散光，眼睛状况
     return dataSet, labels
-     
+    
 def cal_Ent(dataSet): #根据给定数据集计算熵
     num = len(dataSet)
     labels = {}
@@ -59,10 +65,11 @@ def choose_best_feature(dataSet): #选择最佳决策特征
     return bestFeature
     
 def majorityCnt(classList): #多数表决法则
+    print classList 
     classCount = {}
     for vote in classList: #统计数目
         if vote not in classCount.keys(): classCount[vote] = 0
-        classCount +=1
+        classCount += 1
     sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
     return classCount[0][0]
         
@@ -73,9 +80,11 @@ def create_tree(dataSet, labels):
         return classList[0]
     if len(dataSet[0]) == 1: #没有特征，则停止划分
         return majorityCnt(classList)
+    #print dataSet
     bestFeat = choose_best_feature(dataSet)
     bestFeatLabel = labelsCloned[bestFeat] #最佳特征的名字
     myTree = {bestFeatLabel:{}}
+    print "delete %s" % (labelsCloned[bestFeat])
     del(labelsCloned[bestFeat])
     featValues = [example[bestFeat] for example in dataSet] #获取最佳特征的所有属性
     uniqueVals = set(featValues)
@@ -106,12 +115,13 @@ def grab_tree(fileName): #读取树
     import pickle
     fr = open(fileName)
     return pickle.load(fr)
-    
-dataSet, labels = create_data_set()
+
+dataSet, labels = file2matrix()
+print dataSet
 tree = create_tree(dataSet, labels)
 print "decision tree:\n%s" % tree
-print "classify result:\n%s" % classify(tree, labels, [1,1])
-store_tree(tree, "ID3_ex_tree.txt")
+treePlotter.createPlot(tree)
+
 
 
 
