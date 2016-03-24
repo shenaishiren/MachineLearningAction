@@ -14,6 +14,7 @@
     * linear_regression_standard equation.py, 使用标准方程求解线性回归系数
 * decision tree
     * decision_tree_ID3_ex.py, ID3决策树的简单实例，根据create_data_set中创建的dataSet数据集创建决策树
+    * decision_tree_ID3_on_lenses.py, 创建ID3决策树，根据患者状况对隐形眼镜材质进行预测
 
 ##主要参考资料：
 * 机器学习实战

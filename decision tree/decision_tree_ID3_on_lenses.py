@@ -80,11 +80,9 @@ def create_tree(dataSet, labels):
         return classList[0]
     if len(dataSet[0]) == 1: #没有特征，则停止划分
         return majorityCnt(classList)
-    #print dataSet
     bestFeat = choose_best_feature(dataSet)
     bestFeatLabel = labelsCloned[bestFeat] #最佳特征的名字
     myTree = {bestFeatLabel:{}}
-    print "delete %s" % (labelsCloned[bestFeat])
     del(labelsCloned[bestFeat])
     featValues = [example[bestFeat] for example in dataSet] #获取最佳特征的所有属性
     uniqueVals = set(featValues)
@@ -117,7 +115,6 @@ def grab_tree(fileName): #读取树
     return pickle.load(fr)
 
 dataSet, labels = file2matrix()
-print dataSet
 tree = create_tree(dataSet, labels)
 print "decision tree:\n%s" % tree
 treePlotter.createPlot(tree)

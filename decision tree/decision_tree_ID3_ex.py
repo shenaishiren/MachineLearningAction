@@ -113,6 +113,9 @@ print "decision tree:\n%s" % tree
 print "classify result:\n%s" % classify(tree, labels, [1,1])
 store_tree(tree, "ID3_ex_tree.txt")
 
+import treePlotter
+treePlotter.createPlot(tree)
+
 
 
 
