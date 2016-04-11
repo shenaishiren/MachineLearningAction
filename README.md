@@ -17,7 +17,8 @@
     * decision_tree_ID3_on_lenses.py, 创建ID3决策树，根据患者状况对隐形眼镜材质进行预测
 * naive bayes
     * bayes_ex.py, 朴素贝叶斯的简单实例，对留言板的留言进行分类，判断其是否为侮辱性留言
-    
+* SVM
+    * svm_plot_iris.py, 使用不同的SVM对iris数据集进行分类并绘出结果
     
 ##主要参考资料：
 * Peter HARRINGTON.机器学习实战[M].李锐,李鹏,曲亚东,王斌译.北京:人民邮电出版社, 2013.
