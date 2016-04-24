@@ -1,9 +1,9 @@
 # MachineLearningAction
 ##说明
-本Repository主要是常见机器学习算法在常见数据集上面的操作，是作者的学习笔记，希望能够帮助到同样的新手，也期待其他人一起加入。
+本Repository主要是常见机器学习算法在常见数据集上面的操作，是作者的学习笔记，希望能够帮助到同样的新手，希望能够得到你的Star。
 欢迎访问[我的博客](http://blog.csdn.net/xuelabizp)。
 
-使用Python编写，需要的Python模块：
+使用Python2.7编写，需要的模块：
 * numpy
 * matplotlib
 
@@ -19,6 +19,8 @@
     * bayes_ex.py, 朴素贝叶斯的简单实例，对留言板的留言进行分类，判断其是否为侮辱性留言
 * SVM
     * svm_plot_iris.py, 使用不同的SVM对iris数据集进行分类并绘出结果
+* AdaBoost
+    * adaboost_ex.py, AdaBoost算法的简单二分类实例
     
 ##主要参考资料：
 * Peter HARRINGTON.机器学习实战[M].李锐,李鹏,曲亚东,王斌译.北京:人民邮电出版社, 2013.
