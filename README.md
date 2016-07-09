@@ -21,6 +21,8 @@
     * svm_plot_iris.py, 使用不同的SVM对iris数据集进行分类并绘出结果
 * AdaBoost
     * adaboost_ex.py, AdaBoost算法的简单二分类实例
+* K-means
+    * K-means_ex.py, K均值聚类算法的简单实例
     
 ##主要参考资料：
 * Peter HARRINGTON.机器学习实战[M].李锐,李鹏,曲亚东,王斌译.北京:人民邮电出版社, 2013.
