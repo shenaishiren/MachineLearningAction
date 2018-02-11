@@ -56,8 +56,8 @@ def showCluster(dataSet, k, clusterAssment, centroids):
         ptsInClust = dataSet[nonzero(clusterAssment[:,0].A==cent)[0]] #获得属于cent簇的数据
         data.append(ptsInClust)
     for cent, c, marker in zip( range(k), ['r', 'g', 'b', 'y'], ['^', 'o', '*', 's'] ): #画出数据点散点图
-        ax.scatter(data[cent][:, 0], data[cent][:, 1], s=80, c=c, marker=marker)
-    ax.scatter(centroids[:, 0], centroids[:, 1], s=1000, c='black', marker='+', alpha=1) #画出质心点
+        ax.scatter(data[cent][:, 0].tolist(), data[cent][:, 1].tolist(), s=80, c=c, marker=marker)
+    ax.scatter(centroids[:, 0].tolist(), centroids[:, 1].tolist(), s=1000, c='black', marker='+', alpha=1) #画出质心点
     ax.set_xlabel('X Label')
     ax.set_ylabel('Y Label')
     plt.show()
